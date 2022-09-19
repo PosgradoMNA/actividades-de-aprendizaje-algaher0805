@@ -1,0 +1,554 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOtvLPhUmPsENwkPkHJpQB7",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/PosgradoMNA/actividades-de-aprendizaje-algaher0805/blob/main/modulo2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "En el módulo 2 del cuso se comienza hablando de tuplas y listas, los elementos de las tuplas se definen entre paréntesis, también, tuplas tienen índices con los cuales se puede acceder o hacer referencia a cada elemento de una tupla, además la tupla puede contener cualquier tipo de datos. \n"
+      ],
+      "metadata": {
+        "id": "yUYxD7seg89i"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=(9, \"Alex\", 0.23, 35)\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EHROn_86hCdO",
+        "outputId": "b2494c14-2ab6-47aa-a469-41005b4c177f"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(9, 'Alex', 0.23, 35)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 2
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Al igual que con las cadenas de texto como se vio en el primer módulo, se puede extraer solo ciertas partes de las tuplas"
+      ],
+      "metadata": {
+        "id": "6dZwuGoGhjFH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Ojo, en el segundo elemento se agrega el siguiente número mayor del índice que queramos traer (en el ejemplo de abajo se extraen los elementos\n",
+        "#guardados en los lugares 0 y 1 de la tupla, pero al hacer referencia se pone 2 en lugar de 1)\n",
+        "x[0:2]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XoegkRgchhd9",
+        "outputId": "05ac9100-2f0e-476e-ad26-716bbbf22c83"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(9, 'Alex')"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#también podemos acceder a los elementos de las tuplas en orden inverso\n",
+        "x[-1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "S0DO0FLTh2jX",
+        "outputId": "afafaa60-0bfa-4a18-c669-d43ad4c80665"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "35"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "las tuplas también pueden ser elementos de otra tupla"
+      ],
+      "metadata": {
+        "id": "79AJaSFPlBPg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=(3,6,0,8,4,(\"a\",3,23))\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j3qnqp1yl5XG",
+        "outputId": "ff7dc993-dc50-4e47-f684-df9981a42ed3"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(3, 6, 0, 8, 4, ('a', 3, 23))"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#en este ejemplo, al hacer referencia al 6to elemento de la tupla obtendremos una tupla\n",
+        "x[5]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fLHPrUjUmDB1",
+        "outputId": "aaab7a4b-2b90-4d62-998b-3d69f1144902"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "('a', 3, 23)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#En el ejemplo anterior, cuando queremos acceder a un elemento de una tupla anidada dentro de otra, se tiene que hacer referencia con un doble índice\n",
+        "x[5][2]\n",
+        "#El primer índice nos dice que se accederá al 6to elemento de la tupla \"x\", y una vez dentro de la tupla (\"a\",3,23) se accederá al tercer elemento"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ddp7AyeommWt",
+        "outputId": "d3217f14-c911-4930-ce38-74e4e314ad23"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "23"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Finalmente las tuplas se pueden concatenar"
+      ],
+      "metadata": {
+        "id": "JSv_3ZUFnhLu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y=x[5][0:2]\n",
+        "z=x+y\n",
+        "z"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PBRDmFdjnlHR",
+        "outputId": "7da95651-5e45-41eb-f9dd-191434d676f6"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(3, 6, 0, 8, 4, ('a', 3, 23), 'a', 3)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "En este módulo nos explican también las listas, la primer diferencia con respecto de las tuplas es que los elementos de las listas están entre corchetes y no entre paréntesis."
+      ],
+      "metadata": {
+        "id": "VsMEYGNUn0SP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# como se observa, uno de los elementos de una lista puede ser una tupla\n",
+        "x=[3,6,0,8,4,(\"a\",3,23)]\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nbzBgwIfoDVT",
+        "outputId": "5ec3834d-e94c-4e7c-ba82-8d76f7d8708b"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[3, 6, 0, 8, 4, ('a', 3, 23)]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 20
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "A diferencia de las tuplas, las listas si pueden modificarse."
+      ],
+      "metadata": {
+        "id": "sZz5tqkMoUwX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#con extend podemos agregar elementos de manera individual al final de la lista\n",
+        "x.extend([1,8])\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hZkGF6rfoZrk",
+        "outputId": "94f10501-6932-4f02-bff5-6fe20674c50b"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[3, 6, 0, 8, 4, ('a', 3, 23), 1, 8]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 21
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#con append, agregamos un solo elemento al final de la lista\n",
+        "x.append([1,8])\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ydzua0-fot2q",
+        "outputId": "2722d68b-e887-48e5-c3bc-cdf7814d5a87"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[3, 6, 0, 8, 4, ('a', 3, 23), 1, 8, [1, 8]]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#podemos también reemplazar los valores de las listas\n",
+        "x[5]=\"nuevo\"\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2Rk0t6o5pZJj",
+        "outputId": "8d43c605-71f3-4418-eb86-6a205c4b6a82"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[3, 6, 0, 8, 4, 'nuevo', 1, 8, [1, 8]]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# y también eliminar elementos\n",
+        "del(x[0:2])\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gqwbkhi7p5uk",
+        "outputId": "10d92aaa-04c5-4220-c4b0-718e614980df"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 8, 4, 'nuevo', 1, 8, [1, 8]]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "OJO ¿, en las listas, si hacemos una \"copia\" de la lista x (y=x) en realidad ambas listas hacen referencia a los mismos elementos así que al cambiar un elemento de x también se cambiará en y"
+      ],
+      "metadata": {
+        "id": "VG9TNwJAqxUQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y=x\n",
+        "y[1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1CNfIQ_qqvFw",
+        "outputId": "9c8387a8-be9f-4ce3-fbd7-79e23e9a9870"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "8"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 26
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x[1]=\"cuidado\"\n",
+        "y[1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "xtnZeI4CrDAx",
+        "outputId": "6488fa1e-4fff-42e2-dacb-974b35ef764b"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'cuidado'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 27
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Esto puede generar errores costosos, por lo que hay que tener en cuenta que si lo que queremos es hacer una copia de la lista x para trabajarla de manera independiente entonces la sintaxis sería la siguiente"
+      ],
+      "metadata": {
+        "id": "FnBXOyCprNT2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y=x[:]\n",
+        "y[1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "ZP-oGCfWrWqZ",
+        "outputId": "7e5e8369-77e8-425d-b66d-512df7456690"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'cuidado'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x[1]=\"ojo\"\n",
+        "y[1]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "qgxkxPcfrdHy",
+        "outputId": "3168353b-c4d1-440c-9bfd-7ca726235abb"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'cuidado'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 29
+        }
+      ]
+    }
+  ]
+}
